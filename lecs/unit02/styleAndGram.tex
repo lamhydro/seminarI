@@ -1,0 +1,160 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[
+10pt,
+aspectratio=169,
+]{beamer}
+\setbeamercovered{transparent=10}
+\usetheme[
+%  showheader,
+%  red,
+  purple,
+%  gray,
+%  graytitle,
+  colorblocks,
+%  noframetitlerule,
+]{Verona}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mac上使用如下命令声明隶书字体，windows也有相关方式，大家可自行修改
+%\providecommand{\lishu}{\CJKfamily{zhli}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+%
+%\setbeamertemplate{sections/subsections in toc}[ball]
+%\usepackage{xeCJK}
+\usepackage{adjustbox} % Shrink stuff
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+\usefonttheme{professionalfonts}
+\def\mathfamilydefault{\rmdefault}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{bm}
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\small}
+\AtBeginSection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection]} %
+	\end{frame}%
+}
+
+\AtBeginSubsection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection, currentsubsection]} %
+	\end{frame}%
+}
+
+\title{B\'usqueda y revisi\'on bibliografica}
+\subtitle{Herramientas para la elaboraci\'on de la propuesta}
+\author[L.M.]{Luis Alejandro Morales, Ph.D.}
+\mail{lmoralesm@unal.edu.co}
+\institute[UNAL]{Facultad de Ingenier\'ia, Departamento de Ingnenier\'ia Civil y Agr\'icola\\
+Universidad Nacional de Colombia, Bogot\'a}
+\date{\today}
+\titlegraphic[width=3cm]{logo_01u}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- 标题页 ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands
+\newcommand{\gi}{\texttt{Git}}
+\newcommand{\gih}{\texttt{GitHub}}
+\newcommand{\co}[1]{\alert{\textbf{\large \texttt{#1}}}}
+\begin{document}
+
+
+
+\maketitle
+
+%%% define code
+\defverbatim[colored]\lstI{
+	\begin{lstlisting}[language=C++,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	int main() {
+	// Define variables at the beginning
+	// of the block, as in C:
+	CStash intStash, stringStash;
+	int i;
+	char* cp;
+	ifstream in;
+	string line;
+	[...]
+	\end{lstlisting}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- FRAME ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---
+\section{Escritura en ciencias}
+
+\begin{frame}[c]{Generalidades}
+\begin{itemize}
+\item Citaciones y menciones a su trabajo de tesis es lo mas importante.
+\item Una tesis es buena cuando tiene gran influencia y aceptacion.
+\item Cuando los evaluadores y colegas entienden el trabajo.
+\item Lo anterior se logra escribiendo de una forma efectiva.
+\item Es bueno seguir autores en su campo y tratar de emular su escritura.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Generalidades}
+\begin{itemize}
+\item Para escribir claro se debe pensar claro.
+\item Una buena escritura, permite transmitir ideas claramente haciendo el trabajo mas exitoso.
+\item Es importante desarrollar el habito de escribir (e.g. 1 hora diaria). No esperar a tener e.g. graficas.
+\item Al final, el trabajo consiste en hacer el trabajo de lectura facil.
+\item Para que la escritura sea efectiva, conviertase en un escritor.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Escritura vs re-escritura}
+\begin{itemize}
+\item Entienda que sus primeros borradores no los vera nadie, asi que no importa como escriba. 
+\item Intentar escribir un primer borrador de forma perfecta puede ser paralizante.
+\item Los mejores escritores intentan escribir su primer borrador rapidamente. Solo para tener algo que revisar.
+\item Siempre sera mucho mas facil revisar que escribir de cero. 
+\item Note que re-escribir es la esencia de la escritura.
+\item La escritura es un proceso iterativo sobre varias versiones de un texto (e.g. 10 versiones). 
+\item Este proceso iterativo garantiza claridad en el texto. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[c]{Ejercicio}
+Intente escribir 5 min sin parar sobre su idea de tesis. 
+\end{frame}
+
+%---
+
+\section{Contar una historia}
+
+\begin{frame}[c]{Ejercicio}
+\begin{itemize}
+\item El problema con los cientificos es que no saben contar historias.
+\item Un texto cientifico no solo presenta unos datos, los interpreta. 
+\item Un texto construye una historia a partir de los resultados.
+\item Aquellos textos que son capaces de contar una buena historia son los que mas tienen impacto.
+
+\end{itemize}
+\end{frame}
+%---
+\section{Hacer que la historia sea atractiva}
+%---
+\section{Estructura de la historia}
+
+
+
+
+\end{document}
+
+

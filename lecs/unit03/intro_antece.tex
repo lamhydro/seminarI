@@ -1,0 +1,203 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[
+10pt,
+aspectratio=169,
+]{beamer}
+\setbeamercovered{transparent=10}
+\usetheme[
+%  showheader,
+%  red,
+  purple,
+%  gray,
+%  graytitle,
+  colorblocks,
+%  noframetitlerule,
+]{Verona}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mac上使用如下命令声明隶书字体，windows也有相关方式，大家可自行修改
+%\providecommand{\lishu}{\CJKfamily{zhli}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning}
+%\tikzset{
+%  every overlay node/.style={
+%    draw=black,fill=white,rounded corners,anchor=south west,
+%  },
+%}
+% Usage:
+% \tikzoverlay at (-1cm,-5cm) {content};
+% or
+% \tikzoverlay[text width=5cm] at (-1cm,-5cm) {content};
+%\def\tikzoverlay{%
+%   \tikz[baseline,overlay]\node[every overlay node]
+%}%
+\tikzset{
+  every overlay node/.style={
+    anchor=north west,
+  },
+}
+\def\tikzoverlay{%
+   \tikz[baseline,overlay]\node[every overlay node]
+}%
+
+
+\newenvironment{smallgreentext}{\scriptsize\color{green}}{\par}
+\newenvironment{smallbluetext}{\scriptsize\color{blue}}{\par}
+
+%
+%\setbeamertemplate{sections/subsections in toc}[ball]
+%\usepackage{xeCJK}
+\usepackage{adjustbox} % Shrink stuff
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+\usefonttheme{professionalfonts}
+\def\mathfamilydefault{\rmdefault}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{bm}
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\small}
+\AtBeginSection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection]} %
+	\end{frame}%
+}
+
+\AtBeginSubsection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection, currentsubsection]} %
+	\end{frame}%
+}
+
+\title{Introducci\'on: Antecedentes}
+\subtitle{Estructuraci\'on y realizaci\'on de la propuesta}
+\author[L.M.]{Luis Alejandro Morales, Ph.D.}
+\mail{lmoralesm@unal.edu.co}
+\institute[UNAL]{Facultad de Ingenier\'ia, Departamento de Ingnenier\'ia Civil y Agr\'icola\\
+Universidad Nacional de Colombia, Bogot\'a}
+\date{\today}
+\titlegraphic[width=3cm]{logo_01u}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- 标题页 ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands
+\newcommand{\gi}{\texttt{Git}}
+\newcommand{\gih}{\texttt{GitHub}}
+\newcommand{\co}[1]{\alert{\textbf{\large \texttt{#1}}}}
+\begin{document}
+
+
+
+\maketitle
+
+%%% define code
+\defverbatim[colored]\lstI{
+	\begin{lstlisting}[language=C++,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	int main() {
+	// Define variables at the beginning
+	// of the block, as in C:
+	CStash intStash, stringStash;
+	int i;
+	char* cp;
+	ifstream in;
+	string line;
+	[...]
+	\end{lstlisting}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- FRAME ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---
+\section{Introducci\'on: Generalidades}
+\begin{frame}[c]{¿Que es la introducci\'on}
+La introducci\'on es aquella parte del manuscrito que demuestra porqu\'e vale la pena que la historia sea contada. Establece el valor científico del escrito y que problema  plausible y l\'ogico es abordado. La introducci\'on es aquella parte en donde el escritor convence al lector de que el problema ha sido correctamente abordado. La introducci\'on es el motor del documento, de la cual se alimentan las otras secciones.  
+\end{frame}
+
+\begin{frame}[c]{Partes de la introducci\'on}
+\begin{enumerate}
+\item La justificaci\'on: Texto que justifica, con base en unos antecedentes (revisi\'on bibliogr\'afica), una hip\'otesis, argumento, pregunta de investigaci\'on.
+\item Hip\'otesis: Es una declaraci\'on en donde se introduce al lector de una forma l\'ogica y concisa acerca de lo que trata la investigaci\'on. 
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{¿Que contiene la introducci\'on?}
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{itemize}
+\item Definir el alcance de el estudio
+\item Definir el problema 
+\item Establecer el objetivo
+\item Identificar vacíos en el tema
+\item Establecer el propósito del experimento
+\item Resumir los bases del estudio
+\item Establecer la pregunta de investigaci\'on
+\item Proveer un contexto del proyecto
+\item Explicar la teoría involucrada
+\item Presentar una hip\'otesis
+\end{itemize}
+\column{0.5\textwidth}
+\begin{itemize}
+\item ¿De que es exactamente el trabajo?
+\item ¿Por que el trabajo es importante?
+\item ¿Que se necesita para entender el trabajo?
+\item ¿Como el trabajo sera presentado?
+\end{itemize}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Introducci\'on: The topdown approach}
+\tikzoverlay[text width=1.5cm] at (2.3cm,2cm) {
+\begin{tikzpicture} 
+% \node[regular polygon,regular polygon sides=3, draw, fill=blue!20, shape border rotate=180] at (-4cm,0){Introducci\'on};
+ \node[regular polygon,regular polygon sides=3, draw, fill=blue!20, shape border rotate=180] at (current page.center){Introducci\'on};
+\end{tikzpicture}
+};
+\tikzoverlay[text width=4.5cm] at (8.3cm,2cm) {
+\alert{What is the status quo?}
+};
+\tikzoverlay[text width=4.5cm] at (8.3cm,0cm) {
+\alert{What is wrong with the status quo?}
+};
+\tikzoverlay[text width=4.5cm] at (8.3cm,-2cm) {
+\alert{How does my project/paper go beyond the status quo?}
+};
+\end{frame}
+
+\begin{frame}{Ejercicio}
+L\'ea un art\'iculo de inter\'es y determine las partes que componen "the topdown approach".
+\end{frame}
+
+%---
+\section{Antecedentes}
+\begin{frame}{Antecedentes}
+
+\begin{itemize}
+\item Se apoya en la revisi\'on bibliogr\'afica de documentos referentes a la hip\'otesis. 
+\item Los antecedentes no es una simple revisi\'on bibliogr\'afica ordenada, por ejemplo, cronol\'ogicamente.  
+\item Los antecedentes son el medio para justificar la hip\'otesis. 
+\item Los antecedentes se deben construir l\'ogicamente que conduzcan hacia la hip\'otesis planteada.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ejercicio}
+Leer un art\'iculo de inter\'es y determinar el argumento y los antecedentes relacionados con este.
+\end{frame}
+
+
+\end{document}
+
+

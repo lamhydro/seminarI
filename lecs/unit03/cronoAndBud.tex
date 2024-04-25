@@ -1,0 +1,210 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass[
+10pt,
+aspectratio=169,
+]{beamer}
+\setbeamercovered{transparent=10}
+\usetheme[
+%  showheader,
+%  red,
+  purple,
+%  gray,
+%  graytitle,
+  colorblocks,
+%  noframetitlerule,
+]{Verona}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Mac上使用如下命令声明隶书字体，windows也有相关方式，大家可自行修改
+%\providecommand{\lishu}{\CJKfamily{zhli}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{tikz}
+\usetikzlibrary{fadings}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{positioning}
+%\tikzset{
+%  every overlay node/.style={
+%    draw=black,fill=white,rounded corners,anchor=south west,
+%  },
+%}
+% Usage:
+% \tikzoverlay at (-1cm,-5cm) {content};
+% or
+% \tikzoverlay[text width=5cm] at (-1cm,-5cm) {content};
+%\def\tikzoverlay{%
+%   \tikz[baseline,overlay]\node[every overlay node]
+%}%
+\tikzset{
+  every overlay node/.style={
+    anchor=north west,
+  },
+}
+\def\tikzoverlay{%
+   \tikz[baseline,overlay]\node[every overlay node]
+}%
+
+
+\newenvironment{smallgreentext}{\scriptsize\color{green}}{\par}
+\newenvironment{smallbluetext}{\scriptsize\color{blue}}{\par}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+%
+%\setbeamertemplate{sections/subsections in toc}[ball]
+%\usepackage{xeCJK}
+\usepackage{adjustbox} % Shrink stuff
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{subcaption}
+\usefonttheme{professionalfonts}
+\def\mathfamilydefault{\rmdefault}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{bm}
+\setbeamertemplate{section in toc}{\hspace*{1em}\inserttocsectionnumber.~\inserttocsection\par}
+\setbeamertemplate{subsection in toc}{\hspace*{2em}\inserttocsectionnumber.\inserttocsubsectionnumber.~\inserttocsubsection\par}
+\setbeamerfont{subsection in toc}{size=\small}
+\AtBeginSection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection]} %
+	\end{frame}%
+}
+
+\AtBeginSubsection[]{%
+	\begin{frame}%
+		\frametitle{Outline}%
+		\textbf{\tableofcontents[currentsection, currentsubsection]} %
+	\end{frame}%
+}
+
+\title{Propuesta: Cronograma y presupuesto}
+\subtitle{Estructuraci\'on y realizaci\'on de la propuesta}
+\author[L.M.]{Luis Alejandro Morales, Ph.D.}
+\mail{email: lmoralesm@unal.edu.co \\ url: \url{https://lamhydro.github.io}}
+\institute[UNAL]{Facultad de Ingenier\'ia, Departamento de Ingenier\'ia Civil y Agr\'icola\\
+Universidad Nacional de Colombia, Bogot\'a}
+\date{\today}
+\titlegraphic[width=3cm]{logo_01u}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- 标题页 ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands
+\newcommand{\gi}{\texttt{Git}}
+\newcommand{\gih}{\texttt{GitHub}}
+\newcommand{\co}[1]{\alert{\textbf{\large \texttt{#1}}}}
+
+\begin{document}
+
+\maketitle
+
+%%% define code
+\defverbatim[colored]\lstI{
+	\begin{lstlisting}[language=C++,basicstyle=\ttfamily,keywordstyle=\color{red}]
+	int main() {
+	// Define variables at the beginning
+	// of the block, as in C:
+	CStash intStash, stringStash;
+	int i;
+	char* cp;
+	ifstream in;
+	string line;
+	[...]
+	\end{lstlisting}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----------- FRAME ------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----
+\section{Cronograma}
+\begin{frame}{Cronograma: Generalidades}
+\begin{itemize}
+\item El tiempo requerido para realizar proyecto de profundizaci\'on es $\approx$ 500 horas. Para la tesis de investigaci\'on son $\approx$ 1000 horas.
+\item Discuta con su supervisor el cronograma.
+\item Planee diariamente las actividades a desarrollar. 
+\item Establezca hitos dentro su cronograma; cumplimiento de tareas grandes. 
+\item Escoja un dise\~no para el cronograma, e.g. Gantt chart.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cronograma: pasos para crearla}
+\begin{enumerate}
+\item Identifique sus principales objetivos.
+\item Divida sus objetivos en tareas: Grandes, medianas y peque\~nas.
+\item Ubique las tareas en orden cronológico. 
+\item Estime la duración y el esfuerzo de cada tarea.
+\item Asigne recursos y responsabilidades a cada tarea.
+\item Cree una línea de tiempo visual.
+\item Supervise y ajuste su cronograma.
+\end{enumerate}
+%\tikzoverlay[text width=8.5cm] at (1.5cm,-0.5cm) {
+%\centering
+%\begin{smallbluetext}
+%\large Un lector debe ser capaz de reproducir lo que se realiz\'o de acuerdo a lo descrito en la metodolog\'ia
+%\end{smallbluetext} 
+%};
+\end{frame}
+
+\begin{frame}{Ejemplo de cronogramas}
+\textbf{Ajuste espacial de modelos hidrodinámicos de avenida torrencial considerando eventos históricos. Caso de estudio Quebrada Naranjal, Quetame} 
+\centering
+\includegraphics[width=0.7\textwidth]{f1prog.png}
+\end{frame}
+
+\begin{frame}{Ejemplo de cronogramas}
+\textbf{Ajuste espacial de modelos hidrodinámicos de avenida torrencial considerando eventos históricos. Caso de estudio Quebrada Naranjal, Quetame} 
+\begin{columns}
+\column{0.5\textwidth}
+\centering
+\includegraphics[width=0.8\textwidth]{f2prog.png}
+\column{0.5\textwidth}
+\centering
+\includegraphics[width=0.8\textwidth]{f3prog.png}
+\end{columns}
+\end{frame}
+
+
+\section{Presupuesto}
+\begin{frame}{Presupuesto}
+\begin{itemize}
+\item Define las tareas a ejecutar y los recursos que requiere cada una de ellas. 
+\item Divida los costos en:
+\begin{itemize}
+\item Directos: Relacionados con su proyecto (e.g compra de equipos de medición)
+\item Indirectos: No son atribuibles al proyecto (e.g. sala de computo, servicios en la U) 
+\end{itemize}
+\item Determine los topes y los máximos permitidos en su presupuesto. Discuta esto con su supervisor.
+\item Agrupe los costos por categoría:
+\begin{itemize}
+\item Personal
+\item Equipos
+\item Materiales
+\item Viaticos
+\item Software
+\end{itemize}
+\item Determine los costos por categoría y por tiempo (e.g. salario por mes).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Ejemplo de presupuesto}
+\centering
+\includegraphics[width=0.47\textwidth]{f4prog.png}
+\end{frame}
+
+\end{document}
+
+
+\begin{frame}{Ejercicio}
+\begin{enumerate}
+\item Haga una lista de sus actividades grandes, medianas y peque\~nas.
+\item Ordenelas cronológicamente.
+\item Asigneles una tiempo de ejecución determinado.
+\item Determine los recursos que requiere cada una de estas. 
+\end{enumerate}
+\end{document}
